@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Migration bundles
+*.tar.gz
+*.tar
+*.zip
+
+# Extracted bundles
+claude-migrate-*/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
