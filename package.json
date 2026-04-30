@@ -1,22 +1,39 @@
 {
-  "name": "claude-code-migration",
-  "version": "1.0.0",
-  "description": "Export and import Claude Code configuration between accounts/teams",
+  "name": "claude-gdrive-sync",
+  "version": "1.1.0",
+  "description": "Google Drive auto-sync plugin for Claude Code — export/import/sync config between devices",
   "type": "module",
   "bin": {
     "claude-migrate-export": "./migrate-export.js",
-    "claude-migrate-import": "./migrate-import.js"
+    "claude-migrate-import": "./migrate-import.js",
+    "claude-migrate-gdrive": "./migrate-gdrive.js",
+    "claude-gdrive-sync": "./migrate-gdrive.js"
   },
   "scripts": {
     "export": "node migrate-export.js",
     "import": "node migrate-import.js",
     "export:with-sessions": "node migrate-export.js --include-sessions --include-history --include-projects",
-    "dry-run": "node migrate-export.js --dry-run"
+    "dry-run": "node migrate-export.js --dry-run",
+    "setup": "node migrate-gdrive.js setup",
+    "sync": "node migrate-gdrive.js sync",
+    "push": "node migrate-gdrive.js push",
+    "pull": "node migrate-gdrive.js pull",
+    "status": "node migrate-gdrive.js status"
   },
   "dependencies": {
+    "googleapis": "^144.0.0",
     "tar": "^7.5.13"
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "google-drive",
+    "sync",
+    "migration",
+    "config",
+    "backup"
+  ]
 }
